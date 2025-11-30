@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^7.0.1",
+    "@prisma/client": "5.7.0",
     "bcrypt": "^6.0.0",
     "jose": "^6.1.2",
     "next": "16.0.5",
@@ -27,7 +27,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.5",
-    "prisma": "^7.0.1",
+    "prisma": "5.7.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
