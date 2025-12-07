@@ -42,7 +42,6 @@ import {
   verifyRefreshToken,
 } from '@/lib/auth/tokens';
 import { setAuthCookies } from '@/lib/auth/cookies';
-import { error } from 'console';
 
 export async function POST(req: Request) {
   try {
