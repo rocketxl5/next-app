@@ -1,4 +1,34 @@
-// Singin route
+/**
+ * SIGN IN ROUTE
+ * -------------------------------------------------------
+ * Purpose:
+ *   Authenticates an existing user using email + password
+ *   and establishes a new authenticated session.
+ *
+ * Flow:
+ *   1. Read and validate credentials from request body
+ *   2. Find the user in the database by email
+ *   3. Compare plain password with stored hash (bcrypt)
+ *   4. Generate new access token + refresh token
+ *   5. Store hashed refresh token in the database
+ *   6. Set secure HTTP-only auth cookies
+ *   7. Return user-safe data (no sensitive fields)
+ *
+ * Failure cases:
+ *   - Missing fields
+ *   - User not found
+ *   - Invalid credentials
+ *
+ * Security notes:
+ *   - Passwords are never stored in plain text
+ *   - JWT tokens are stored in HTTP-only cookies
+ *   - Refresh tokens are hashed before saving
+ *   - Prevents timing & credential guessing attacks
+ * -------------------------------------------------------
+ *
+ * Method:   POST /api/auth/signin
+ * Access:   Public
+ */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
